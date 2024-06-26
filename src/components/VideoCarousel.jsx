@@ -59,7 +59,7 @@ const VideoCarousel = () => {
           // get the progress of the video
           const progress = Math.ceil(anim.progress() * 100);
 
-          if (progress !== currentProgress) {
+          if (progress != currentProgress) {
             currentProgress = progress;
 
             // set the width of the progress bar
@@ -113,7 +113,7 @@ const VideoCarousel = () => {
         gsap.ticker.remove(animUpdate);
       }
     }
-  }, [videoId,isPlaying, startPlay]);
+  }, [videoId, startPlay]);
 
   useEffect(() => {
     if (loadedData.length > 3) {

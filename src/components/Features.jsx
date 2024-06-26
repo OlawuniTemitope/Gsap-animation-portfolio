@@ -19,7 +19,7 @@ const Features = () => {
       }
     })
 
-    animateWithGsap('#features_title', { y:0, opacity:1});
+    animateWithGsap('#features_title', { y:0, opacity:1})
     animateWithGsap(
       '.g_grow',
       { scale: 1, opacity: 1, ease: 'power1' },
@@ -81,6 +81,7 @@ const Features = () => {
                     You will notice the difference the moment you pick one up.
                   </p>
                 </div>
+
 
               </div>
             </div>

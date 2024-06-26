@@ -41,7 +41,7 @@ const HowItWorks = () => {
           </h2>
 
           <p className="hiw-subtitle">
-            It is here. The biggest redesign in the history of Apple GPUs.
+            It's here. The biggest redesign in the history of Apple GPUs.
           </p>
         </div>
 
@@ -55,8 +55,7 @@ const HowItWorks = () => {
               />
             </div>
             <div className="hiw-video">
-                <video className="pointer-events-none" playsInline preload="none" 
-                muted autoPlay ref={videoRef}>
+                <video className="pointer-events-none" playsInline preload="none" muted autoPlay ref={videoRef}>
                   <source src={frameVideo} type="video/mp4" />
                 </video>
               </div>
