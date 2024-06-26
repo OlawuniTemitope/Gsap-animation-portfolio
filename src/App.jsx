@@ -10,10 +10,10 @@ import * as Sentry from '@sentry/react';
 
 const App = () => {
   return (
-    <main className="bg-black flex flex-col relative">
+    <main className="bg-black h-screen">
       <Navbar/>
-      <Highlights/>
       <Hero />
+      <Highlights/>
       <Model />
       <Features />
       <HowItWorks />
