@@ -145,7 +145,7 @@ function Iphone(props) {
         material={materials.pIJKfZsazmcpEiU}
         scale={0.01}
       >
-        <THREE.MeshStandardMaterial roughness={1} map={texture} />
+        <newTHREE.MeshStandardMaterial roughness={1} map={texture} />
       </mesh>
       <mesh
         castShadow
