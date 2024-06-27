@@ -48,6 +48,17 @@ const VideoCarousel = () => {
     });
   }, [isEnd, videoId]);
 
+  
+  useEffect(() => {
+    if (loadedData.length > 3) {
+      if (!isPlaying) {
+        videoRef.current[videoId].pause();
+      } else {
+        startPlay && videoRef.current[videoId].play();
+      }
+    }
+  }, [startPlay, videoId, isPlaying, loadedData]);
+
   useEffect(() => {
     let currentProgress = 0;
     let span = videoSpanRef.current;
@@ -115,16 +126,6 @@ const VideoCarousel = () => {
     }
   }, [videoId, startPlay]);
 
-  useEffect(() => {
-    if (loadedData.length > 3) {
-      if (!isPlaying) {
-        videoRef.current[videoId].pause();
-      } else {
-        startPlay && videoRef.current[videoId].play();
-      }
-    }
-  }, [startPlay, videoId, isPlaying, loadedData]);
-
   // vd id is the id for every video until id becomes number 3
   const handleProcess = (type, i) => {
     switch (type) {
@@ -137,7 +138,7 @@ const VideoCarousel = () => {
         break;
 
       case "video-reset":
-        setVideo((pre) => ({ ...pre, videoId: 0, isLastVideo: false }));
+        setVideo((pre) => ({ ...pre, isLastVideo: false, videoId: 0  }));
         break;
 
       case "pause":
@@ -187,7 +188,7 @@ const VideoCarousel = () => {
 
               <div className="absolute top-12 left-[5%] z-10">
                 {list.textLists.map((text, i) => (
-                  <p key={i} className="md:text-2xl text-xl font-medium">
+                  <p key={text} className="md:text-2xl text-xl font-medium">
                     {text}
                   </p>
                 ))}
@@ -198,7 +199,8 @@ const VideoCarousel = () => {
       </div>
 
       <div className="relative flex-center mt-10">
-        <div className="flex-center py-5 px-7 bg-gray-300 backdrop-blur rounded-full">
+        <div className="flex-center py-5 px-7 bg-gray-300
+         backdrop-blur rounded-full">
           {videoRef.current.map((_, i) => (
             <span
               key={i}
